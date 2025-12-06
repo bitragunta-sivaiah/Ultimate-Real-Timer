@@ -1,84 +1,55 @@
-# Ultimate React Focus Timer ⏱️
+# Ultimate Real Timer ⏱️
 
-![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-Animation-0055FF?style=for-the-badge&logo=framer)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Project Status](https://img.shields.io/badge/status-active-success.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
+![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 
-A highly interactive, aesthetically crafted productivity application featuring multiple specialized themes. Built with **React** and **Framer Motion**, this project demonstrates complex SVG animations, state management, and persistent user preferences.
-
----
-
-## 📸 Theme Showcase
-
-> **Note:** This application features three distinct UI paradigms to suit different user personas.
-
-### 1. Developer Theme (The "Caffeine" Mode)
-*Target Audience: Programmers & Night Owls*
-* **Visuals:** Dynamic SVG coffee cup that depletes as time passes.
-* **Features:** "Console" style state logging, hex-code color pickers, and steam/liquid physics animations.
-* **Vibe:** Dark mode, monospaced fonts, IDE aesthetic.
-
-### 2. Classic Theme
-*Target Audience: Minimalists*
-* **Visuals:** Clean lines, high contrast, and traditional digital clock layouts.
-* **Features:** Distraction-free interface focusing purely on the countdown.
-
-### 3. Modern Theme
-*Target Audience: Designers & Creatives*
-* **Visuals:** Glassmorphism, soft gradients, and fluid UI transitions.
-* **Features:** Floating controls and ambient background effects.
+A high-performance, multi-theme timer application built with **React** and **Tailwind CSS**. Designed for productivity enthusiasts and developers, this application features a persistent state architecture that remembers your preferred visual environment across sessions.
 
 ---
 
-## ✨ Key Features
+## 🌟 Key Features
 
-* **⚡ Multi-Modal Functionality:**
-    * **Pomodoro:** Customizable Focus/Short Break/Long Break cycles.
-    * **Timer:** Standard countdown for specific tasks (e.g., brewing coffee).
-    * **Stopwatch:** Track elapsed time.
-    * **Clock:** Live digital clock display.
-* **💾 Smart Persistence:**
-    * Uses `localStorage` to remember the user's preferred theme across sessions.
-    * State retention logic to prevent accidental resets.
-* **🎨 Advanced UI/UX:**
-    * **SVG Animations:** Complex paths and masks used for liquid fill effects.
-    * **Responsive Design:** Fully fluid layouts using Tailwind CSS.
-    * **Micro-interactions:** Buttons and toggles feature satisfying Framer Motion spring physics.
+* **Multi-Theme Architecture:** Seamlessly switch between three distinct visual modes:
+    * **Classic:** A timeless, easy-to-read interface for everyday use.
+    * **Developer:** A monospaced, terminal-inspired layout for coding sessions.
+    * **Modern:** A sleek, minimalist aesthetic for focus and clarity.
+* **State Persistence:** Utilizes `localStorage` to automatically save and load your selected theme preferences.
+* **Responsive Design:** Fully responsive layout built with Tailwind CSS, ensuring usability on mobile, tablet, and desktop.
+* **Clean UI/UX:** Dark-mode first design with a sticky header and backdrop blur effects for a premium feel.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Tech Stack
 
-* **Frontend Framework:** [React](https://react.dev/) (Vite)
+* **Frontend Framework:** [React](https://reactjs.org/) (Hooks & Functional Components)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **Animation:** [Framer Motion](https://www.framer.com/motion/)
-* **Icons:** [Lucide React](https://lucide.dev/)
-* **State Management:** React Hooks (`useState`, `useEffect`)
+* **State Management:** React `useState` & `useEffect`
+* **Icons:** (Optional: typically Lucide-React or Heroicons)
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Installation & Setup
 
-Follow these steps to run the project locally.
+Follow these steps to get the project running locally.
 
 ### Prerequisites
+
 * Node.js (v16.0.0 or higher)
 * npm or yarn
 
-### Installation
+### Steps
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/your-username/ultimate-focus-timer.git](https://github.com/your-username/ultimate-focus-timer.git)
-    cd ultimate-focus-timer
+    git clone [https://github.com/your-username/ultimate-real-timer.git](https://github.com/your-username/ultimate-real-timer.git)
+    cd ultimate-real-timer
     ```
 
 2.  **Install dependencies**
     ```bash
     npm install
-    # or
-    yarn install
     ```
 
 3.  **Start the development server**
@@ -87,56 +58,18 @@ Follow these steps to run the project locally.
     ```
 
 4.  **Open in browser**
-    Visit `http://localhost:5173` (or the port shown in your terminal).
+    Navigate to `http://localhost:5173` (or the port shown in your terminal).
 
 ---
 
 ## 📂 Project Structure
 
+The project is structured to support modular theme development.
+
 ```text
 src/
-├── components/
-│   ├── UltimateTimerTemplate1.jsx  # Classic Theme
-│   ├── UltimateTimerTemplate2.jsx  # Developer Theme (SVG Logic)
-│   └── UltimateTimerTemplate3.jsx  # Modern Theme
-├── App.jsx                         # Main Layout & Theme Switcher Logic
-├── main.jsx                        # Entry Point
-└── index.css                       # Tailwind Directives
-💡 Code Highlight: Theme Persistence
-The application uses a robust effect hook to manage theme state, ensuring the user's preference is respected immediately upon load to prevent "flash of wrong theme" (FOWT).
-
-JavaScript
-
-// src/App.jsx
-
-const THEME_STORAGE_KEY = 'ultimate_timer_theme';
-
-// Load theme on mount
-useEffect(() => {
-  try {
-    const saved = localStorage.getItem(THEME_STORAGE_KEY);
-    // Validation check to ensure valid theme string
-    if (['classic', 'developer', 'modern'].includes(saved)) {
-      setTheme(saved);
-    }
-  } catch (err) {
-    console.error('Error reading theme', err);
-  }
-}, []);
-🤝 Contributing
-Contributions are welcome! Please follow these steps:
-
-Fork the project.
-
-Create your feature branch (git checkout -b feature/AmazingFeature).
-
-Commit your changes (git commit -m 'Add some AmazingFeature').
-
-Push to the branch (git push origin feature/AmazingFeature).
-
-Open a Pull Request.
-
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
-
-<p align="center"> Built with ❤️ by [Your Name] </p>
+├── App.jsx                       # Main entry point & Layout logic
+├── UltimateTimerTemplate1.jsx    # "Classic" Theme Component
+├── UltimateTimerTemplate2.jsx    # "Developer" Theme Component
+├── UltimateRealTimerTemplate3.jsx # "Modern" Theme Component
+└── index.css                     # Tailwind directives & global styles
